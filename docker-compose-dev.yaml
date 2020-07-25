@@ -1,0 +1,46 @@
+version: '3.1'
+
+services:
+  #service name
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: user
+      POSTGRES_DB: blog
+    ports:
+      - 5555:5432
+
+#  db2:
+#    image: blacklabelops/hsqldb
+#    restart: always
+#    environment:
+#      POSTGRES_USER: user
+#      POSTGRES_PASSWORD: user
+#      POSTGRES_DB: blog
+#    ports:
+#      - 6666:9001
+
+  db1:
+    image: blacklabelops/hsqldb
+    restart: always
+    environment:
+      HSQLDB_TRACE: "true"
+      HSQLDB_SILENT: "false"
+      HSQLDB_REMOTE: "true"
+      HSQLDB_DATABASE_NAME: "hsqldb"
+      HSQLDB_DATABASE_ALIAS: "blog"
+      HSQLDB_DATABASE_HOST: "localhost"
+      HSQLDB_USER: user
+      HSQLDB_PASSWORD: user
+    ports:
+      - 9001:9001
+
+
+  #service name
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
