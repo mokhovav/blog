@@ -18,7 +18,7 @@
         <freemarker.version>2.3.30</freemarker.version>
         <failOnMissingWebXml>false</failOnMissingWebXml>
 
-        <jackson.version>2.9.10</jackson.version>
+        <jackson.version>2.12.7.1</jackson.version>
         <tomcat.version>8.5.57</tomcat.version>
 
     </properties>
